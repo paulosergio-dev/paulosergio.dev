@@ -10,30 +10,35 @@
 
 /* skills*/  
   .skills-section .skill-tag {
-	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
-	border: 1px solid #05050575;
-	padding: 6px 30px;
+	box-shadow: 1px 1px 4px  rgba(41, 253, 13, 0.301);
+	border: 1px solid #000000fd;
+	border-radius: 5px;
+	padding: 5px 35px;
 	display: inline-block;
 	margin-right: 10px;
 	margin-bottom: 15px;
+	text-align: center;
+	
+	
   }
 /* skills*/  
 
 .card {
-	padding: 6px 30px 30px;	
-	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
-	border: 1px solid #05050575;
+	text-align: center;
+	box-shadow: 0 1px 4px 0 rgb(41, 253, 13);
+	border: 1px solid #000000fd;
 }   
 
 .footer{
 	text-align: center;
-	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
-	border: 1px solid #05050575;
+	box-shadow: 0 1px 4px 0 rgb(41, 253, 13);
+	border: 1px solid #000000fd;
+	
 }
 
 .jumbotron{
-	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
-	border: 1px solid #05050575;
+	box-shadow: 0 1px 4px 0 rgb(41, 253, 13);
+	border: 1px solid #000000fd;
 }
 
 
