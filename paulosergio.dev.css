@@ -1,14 +1,12 @@
-body {
-	background-image: url(https://cdn.pixabay.com/photo/2016/11/19/22/52/coding-1841550_1280.jpg);
-	background-repeat: repeat;
+.container {
+	background-image: url(https://www.nawpic.com/media/2020/iphone-4k-nawpic-10.jpg);
   }
-  
-  
+    
   /* ICONS */
   .header-icons a {
 	color: rgb(5, 5, 5);
 	font-size: 30px;
-	padding: 10px;
+	padding: 10px; 
   }
   /*ICONS*/
   
@@ -20,6 +18,7 @@ body {
 	display: inline-block;
 	margin-right: 10px;
 	margin-bottom: 15px;
+	border: 1px solid #05050575;
   }
   /* skills*/
   
@@ -28,17 +27,22 @@ body {
 	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
 	border: 1px solid #05050575;
   }
-  
-  .footer {
-	text-align: center;
-	border: 1px solid #05050575;
-   }
-  
+    
   .jumbotron {
-	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
 	border: 1px solid #05050575;
   }
-  
+
+  #habilidades{
+	border: 1px solid #05050575;
+  } 
+
+  #formação{
+	border: 1px solid #05050575;
+  }
+
+  footer{
+	border: 1px solid #05050575;
+  }
   
   /* btn whatsapp*/
 
