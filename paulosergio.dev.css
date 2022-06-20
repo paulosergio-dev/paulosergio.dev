@@ -1,6 +1,6 @@
 .container {
-	background-image: url(https://www.nawpic.com/media/2020/iphone-4k-nawpic-10.jpg);
-  }
+    background-image: url(https://www.salgrossodecora.com.br/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/0/2/02_01_0640_1_1.jpg);
+}
     
   /* ICONS */
   .header-icons a {
@@ -11,37 +11,30 @@
   /*ICONS*/
   
   /* skills*/
-  .skills-section .skill-tag {
-	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
-	border: 1px solid #05050575;
-	padding: 6px 30px;
-	display: inline-block;
-	margin-right: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #05050575;
-  }
+.skills-section .skill-tag {
+    box-shadow: 1px 3px rgba(107, 179, 131, 0.781);
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 15px;    
+}
   /* skills*/
-  
-  .card {
-	padding: 6px 30px 30px;
-	box-shadow: 0 1px 4px 0 rgba(107, 179, 131, 0.781);
-	border: 1px solid #05050575;
-  }
-    
-  .jumbotron {
-	border: 1px solid #05050575;
-  }
 
-  #habilidades{
-	border: 1px solid #05050575;
-  } 
+.jumbotron {
+    border: 5px solid #000000;
+}
 
-  #formação{
-	border: 1px solid #05050575;
-  }
+#habilidades {
+    border: 5px solid #000000;
+}
+
+#formação {
+    border: 5px solid #000000;
+}
 
   footer{
-	border: 1px solid #05050575;
+	border: 5px solid #000000;
   }
   
   /* btn whatsapp*/
