@@ -1,45 +1,49 @@
 .container {
-    background-image: url(https://ae01.alicdn.com/kf/Hfe33681448db4257acf3db9c457f5072n.jpg);
+	background-image: url(https://ae01.alicdn.com/kf/Hfe33681448db4257acf3db9c457f5072n.jpg);
 }
-    
-  /* ICONS */
-  .header-icons a {
+
+/* ICONS */
+.header-icons a {
 	color: rgb(5, 5, 5);
 	font-size: 30px;
-	padding: 10px; 
-  }
-  /*ICONS*/
-  
-  /* skills*/
-.skills-section .skill-tag {
-    box-shadow: 1px 3px rgba(107, 179, 131, 0.781);
-    border: 1px solid #000000;
-    padding: 5px 20px;
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 15px;    
+	padding: 10px;
 }
-  /* skills*/
+
+/*ICONS*/
+
+/* skills*/
+.skills-section .skill-tag {
+	box-shadow: 1px 3px rgba(107, 179, 131, 0.781);
+	border: 1px solid #000000;
+	padding: 5px 20px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 15px;
+}
+
+/* skills*/
 
 .jumbotron {
-    border: 5px solid #000000;
+	border: 5px solid #000000;
 }
 
 #habilidades {
-    border: 5px solid #000000;
+	border: 5px solid #000000;
+	padding: 1%;
 }
 
 #formação {
-    border: 5px solid #000000;
+	border: 5px solid #000000;
+	padding: 1%;
 }
 
-  footer{
+footer {
 	border: 5px solid #000000;
-  }
-  
-  /* btn whatsapp*/
+}
 
-  .whatsapp {	
+/* btn whatsapp*/
+
+.whatsapp {
 	animation: pulse 0.7s infinite;
 	margin: 0 auto;
 	display: table;
@@ -47,28 +51,28 @@
 	animation-direction: alternate;
 	-webkit-animation-name: pulse;
 	animation-name: pulse;
- }
-	  
-	@-webkit-keyframes pulse {
+}
+
+@-webkit-keyframes pulse {
 	0% {
-    -webkit-transform: scale(1);
-	-webkit-filter: brightness(100%);
+		-webkit-transform: scale(1);
+		-webkit-filter: brightness(100%);
 	}
+
 	100% {
-	-webkit-transform: scale(1.1);
-	-webkit-filter: brightness(200%);
+		-webkit-transform: scale(1.1);
+		-webkit-filter: brightness(200%);
 	}
-  }
-	  
-	@keyframes pulse {
+}
+
+@keyframes pulse {
 	0% {
-	    transform: scale(1);
-		  filter: brightness(100%);
-		}
+		transform: scale(1);
+		filter: brightness(100%);
+	}
+
 	100% {
 		transform: scale(1.1);
 		filter: brightness(200%);
-	} 
-};
-
-
+	}
+}
