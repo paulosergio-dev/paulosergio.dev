@@ -3,11 +3,20 @@
 }
 
 /* ICONS */
-.header-icons a {
-	color: rgb(5, 5, 5);
-	font-size: 30px;
-	padding: 10px;
+.header-icons {
+	display: flex;
+	gap: 15px; /* Espaçamento entre os ícones */
 }
+
+	.header-icons a {
+		color: #000; /* Cor dos ícones */
+		font-size: 1.5rem; /* Tamanho dos ícones */
+	}
+
+		.header-icons a:hover {
+			color: #007bff; /* Cor ao passar o mouse */
+		}
+
 
 /*ICONS*/
 
