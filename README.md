@@ -1,2 +1,0 @@
-# paulosergio.dev
-paulosergio.dev

@@ -1,273 +1,322 @@
-﻿<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube Astra | Redirecionando para o Grupo VIP...</title>
 
-    <!-- CSS Responsivo -->
-    <link rel="stylesheet" href="small.css" media="screen and (min-width: 0px)">
-    <link rel="stylesheet" href="medium.css" media="screen and (min-width: 1000px)">
-    <link rel="stylesheet" href="large.css" media="screen and (min-width: 1350px)">
-    <link rel="stylesheet" href="paulosergio.dev.css">
+    <!-- Fallback nativo caso o navegador bloqueie scripts -->
+    <meta http-equiv="refresh" content="4; url=https://chat.whatsapp.com/Esl7ExpVfZ394ukbvShIc9">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0a0c10;
+            --card-bg: #14171f;
+            --accent-gold: #f5a623;
+            --accent-gold-glow: rgba(245, 166, 35, 0.35);
+            --wpp-green: #25D366;
+            --wpp-hover: #20ba59;
+            --text-main: #f0f3f6;
+            --text-muted: #8b949e;
+        }
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
-    <!-- Ícones Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        body {
+            background-color: var(--bg-body);
+            background-image: radial-gradient(circle at top, #1a2333 0%, var(--bg-body) 70%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
 
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            max-width: 440px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 166, 35, 0.08);
+            position: relative;
+            text-align: center;
+        }
 
-    <title>paulosergio.dev</title>
+        /* Banner visual do Astra */
+        .banner-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: brightness(0.9);
+            transform: scale(1.02);
+            transition: transform 0.5s ease;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(20, 23, 31, 0) 30%, var(--card-bg) 100%);
+        }
+
+        .badge-vip {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 5px 12px;
+            border-radius: 50px;
+            backdrop-filter: blur(8px);
+            text-transform: uppercase;
+        }
+
+        /* Conteúdo e Informações */
+        .content {
+            padding: 10px 24px 28px;
+        }
+
+        .group-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            margin: -48px auto 14px;
+            position: relative;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            background: #000;
+        }
+
+        .group-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        h1 span {
+            color: var(--accent-gold);
+        }
+
+        .subhead {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.45;
+            margin-bottom: 22px;
+        }
+
+        /* Barra de Carregamento & Timer */
+        .timer-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 22px;
+        }
+
+        .timer-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .timer-count {
+            background: var(--accent-gold);
+            color: #000;
+            font-weight: 800;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .progress-track {
+            height: 6px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-gold) 0%, #ffcf70 100%);
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--accent-gold-glow);
+            transition: width 0.05s linear;
+        }
+
+        /* Botão do WhatsApp com pulso */
+        .btn-wpp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--wpp-green);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            transition: all 0.25s ease;
+            position: relative;
+            animation: pulse-wpp 2s infinite;
+        }
+
+        @keyframes pulse-wpp {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .btn-wpp:hover {
+            background-color: var(--wpp-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-wpp svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* Selos de Parceiros de Desconto */
+        .partners {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            opacity: 0.65;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
-<body class="container">
+<body>
 
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://paulosergiodev.com" target="_blank">'-'</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.facebook.com/paulosergiosofia" target="_blank">
-                            <i class="bi bi-facebook"></i> Facebook
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.instagram.com/paulosergio.dev/?hl=pt-br" target="_blank">
-                            <i class="bi bi-instagram"></i> Instagram
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://twitter.com/PaauLao" target="_blank">
-                            <i class="bi bi-twitter"></i> Twitter
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/paulosergioo-/" target="_blank">
-                            <i class="bi bi-linkedin"></i> LinkedIn
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/paulosergio-dev" target="_blank">
-                            <i class="bi bi-github"></i> GitHub
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <br />
-
-    <div>
-        <a href="https://api.whatsapp.com/send?l=pt&phone=5521994641174" target="_blank">
-            <img class="whatsapp" src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png"
-                 style="height:80px; position:fixed; bottom:25px; right:25px; z-index:99999;">
-        </a>
-    </div>
-
-    <!-- REDES SOCIAIS-->
-    <div class="jumbotron">
-        <h1>Paulo Sérgio</h1><br>
-        <p>
-            Duque de Caxias - RJ.<br>
-            Análise e Desenvolvimento de Sistemas - <strong>Unigranrio</strong><br>
-            Pós-Graduação - Logística e Supply Chain - <strong>Uninter</strong><br><br>
-            <strong>Desenvolvedor .Net</strong> | C# | ASP.NET Core | SQL Server
-            <!--<a href="https://www.linkedin.com/company/fadami/posts/?feedView=all" target="_blank" style="color:black;">
-                <strong>Fadami</strong>
-            </a>-->
-        </p>
-        <div class="header-icons">
-            <a href="https://www.facebook.com/paulosergiosofia" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/paulosergio.dev/" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://x.com/PaauLao" target="_blank"><i class="bi bi-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/paulosergioo-/" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/paulosergio-dev" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://steamcommunity.com/id/PaauLao/" target="_blank"><i class="bi bi-steam"></i></a>
+    <div class="card">
+        <!-- Banner Superior com a Imagem do Anúncio -->
+        <div class="banner-wrapper">
+            <span class="badge-vip">Acesso VIP Oficial</span>
+            <img src="astra-banner.jpg" alt="Astra Peças e Acessórios" class="banner-img">
+            <div class="banner-overlay"></div>
         </div>
 
-        <br>
-        <button class="btn btn-primary" type="button">
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Em construção...
-        </button>
-    </div>
+        <div class="content">
+            <!-- Ícone/Avatar do Grupo -->
+            <div class="group-avatar">
+                <img src="astra-banner.jpg" alt="Astra Clube">
+            </div>
 
+            <h1>Peças de Astra <span>• Ofertas VIP</span></h1>
+            <p class="subhead">Acessórios, iluminação, ferramentas e peças mecânicas garimpadas com preço de custo.</p>
 
-    <!-- REDES SOCIAIS-->
-    <!-- Graduação -->
-    <div id="formação" class="card text-center">
-        <h4> <strong>FORMAÇÃO</strong> </h4>
-        <h6 class="card-title">
-            Análise e Desevolvimento de Sistemas - <strong>Universidade Unigranrio</strong>
-        </h6>
-        <h6 class="card-title">Pós - LOGÍSTICA E SUPPLY CHAIN - <strong>UNINTER</strong></h6>
-        <hr>
-        <div>
-            <h4> <strong>Principais competências</strong> </h4>
-            <p class="card text-center" style="text-align: left;">
-                <h6>- Desenvolvimento back-end, C#, AspNet Web API, AspNet MVC.</h6>
-                <h6>
-                    - Bancos de dados relacionais(SQL Server/PLSQL/MySql), Views, Procedures, NoSQL(MongoDB),<br> Nhibernate
-                    (Entity Framework, Dapper), Cache com Redis.
-                </h6>
-                <h6>- Clean Code, SOLID, Clean Architecture, DDD, POO, CQRS.</h6>
-                <h6>- Teste Unitário/Integração, XUnit, Moq.</h6>
-                <h6>- Experiência com ferramentas de versionamento de código (Git e Tortoise SVN).</h6>
-                <h6>- Desenvolvimento Front-End utilizando HTML 5, CSS, React, Angular, Java Script e Bootstrap.</h6>
-                <h6>- Mensageria com RabbitMq.</h6>
-                <h6>- Integrações e manutenções de aplicações web.</h6>
-            </p>
-        </div>
-    </div>
-    <!-- Graduação -->
-    <br />
-    <!--HABILIDADES-->
-    <div id="habilidades" class="card text-center">
-        <section id="skills-section" class="skills-section section text-center">
-            <div class="other-skills">
-                <h3><strong> Habilidades</strong></h3>
-                <hr>
-                <div class="misc-skills">
-                    <span class="skill-tag">.Net Core</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">ASP.NET</span>
-                    <span class="skill-tag">Entity Framework</span>
-                    <span class="skill-tag">WebForms</span>
-                    <span class="skill-tag">MVC</span>
-                    <span class="skill-tag">WebApi</span>
-                    <br>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">Bootstrap</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">React</span>
-                    <br>
-                    <span class="skill-tag">NodeJS</span>
-                    <span class="skill-tag">Angular8</span>
-                    <span class="skill-tag">Delphi</span>
-                    <span class="skill-tag">PL/SQL</span>
-                    <span class="skill-tag">MySql</span>
-                    <br>
-                    <span class="skill-tag">Json</span>
-                    <span class="skill-tag">Postman</span>
-                    <span class="skill-tag">Soap</span>
-                    <span class="skill-tag">WinSPC</span>
-                    <span class="skill-tag">PuTTy</span>
-                    <span class="skill-tag">Nginx</span>
-                    <!-- <span class="skill-tag">Soap</span> -->
+            <!-- Box do Contador de 3 Segundos -->
+            <div class="timer-box">
+                <div class="timer-label">
+                    <span>A transferir para o WhatsApp...</span>
+                    <span class="timer-count" id="countdown">3s</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" id="progressBar"></div>
                 </div>
             </div>
-        </section>
-    </div>
-    <!--HABILIDADES-->
-    <!--Formulario-->
-    <!-- Formulário de Contato -->
-    <div class="container mt-5" id="formulario">
-        <h2 class="text-center mb-4">Entre em contato conosco!</h2>
-        <form id="interestForm">
-            <div class="form-group mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ ]+" required>
-            </div>
-            <div class="form-group mb-3">
-                <label for="email" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control" id="sobrenome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ ]+" required>
-            </div>
-            <div class="form-group mb-3">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="form-group mb-3">
-                <label for="celular" class="form-label">Celular</label>
-                <input type="tel" class="form-control" id="celular" pattern="[0-9]+" required>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary" style="border-radius:10px; width:50%;">Enviar</button>
-            </div>
-        </form>
-    </div>
 
-    <!-- Modal de Confirmação -->
-    <div class="modal fade" id="confirmationModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Obrigado pelo seu Interesse!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p id="userMessage"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                </div>
+            <!-- Botão Direto (Clique para acelerar) -->
+            <a href="https://chat.whatsapp.com/Esl7ExpVfZ394ukbvShIc9" class="btn-wpp" id="wppBtn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.956 2.796.957 3.183 0 5.768-2.587 5.768-5.767 0-3.181-2.586-5.768-5.768-5.768zm7.397 5.766c.002 4.078-3.32 7.398-7.397 7.399-.001 0-.001 0 0 0-1.282 0-2.53-.33-3.623-.956l-4.032 1.058 1.077-3.931c-.684-1.135-1.047-2.434-1.048-3.766.002-4.078 3.32-7.399 7.397-7.399 4.078 0 7.398 3.321 7.398 7.399z" />
+                </svg>
+                Entrar no Grupo Agora
+            </a>
+
+            <!-- Selos de Confiança -->
+            <div class="partners">
+                <span>Mercado Livre</span>
+                <span>•</span>
+                <span>Shopee</span>
+                <span>•</span>
+                <span>Amazon</span>
             </div>
         </div>
     </div>
 
     <script>
-        document.getElementById('interestForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const nome = document.getElementById('nome').value;
-            document.getElementById('userMessage').innerText =
-                `Obrigado pelo seu interesse, ${nome}! Entraremos em contato em breve.`;
-            const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-            confirmationModal.show();
-            this.reset();
-        });
+        const targetUrl = "https://chat.whatsapp.com/Esl7ExpVfZ394ukbvShIc9";
+        const duration = 3000; // 3 segundos exatos
+        const intervalTime = 30; // atualização suave da barra (30ms)
+        let elapsed = 0;
+
+        const progressBar = document.getElementById("progressBar");
+        const countdownEl = document.getElementById("countdown");
+
+        const timer = setInterval(() => {
+            elapsed += intervalTime;
+            const progress = Math.min((elapsed / duration) * 100, 100);
+            progressBar.style.width = progress + "%";
+
+            const remainingSeconds = Math.ceil((duration - elapsed) / 1000);
+            if (remainingSeconds >= 0) {
+                countdownEl.textContent = remainingSeconds + "s";
+            }
+
+            if (elapsed >= duration) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, intervalTime);
     </script>
-    <!--Formulario-->
-
-    <br />
-
-    <footer id="footer" class="bg-dark text-center text-white">
-        <!-- Grid container -->
-        <!-- Copyright -->
-        <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/paulosergiosofia"
-                   target="_blank" role="button">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/PaauLao" target="_blank" role="button">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/paulosergio.dev/" target="_blank" role="button">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/paulosergioo-/" target="_blank" role="button">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/paulosergio-dev" target="_blank" role="button">
-                    <i class="bi bi-github"></i>
-                </a>
-            </section>
-            © 2024 Copyright:
-            <a class="text-white" href="https://paulosergiodev.com">paulosergiodev.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-
-    <!-- Footer -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
+
+</html>
