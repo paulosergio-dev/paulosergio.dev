@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube Astra | Redirecionando para o Grupo VIP...</title>
-
-    <!-- Fallback nativo caso o navegador bloqueie scripts -->
-    <meta http-equiv="refresh" content="4; url=https://chat.whatsapp.com/Esl7ExpVfZ394ukbvShIc9">
+    <title>Clube Astra | Peças e Ofertas</title>
 
     <style>
         :root {
@@ -294,8 +291,8 @@
 
     <script>
         const targetUrl = "https://chat.whatsapp.com/Esl7ExpVfZ394ukbvShIc9";
-        const duration = 3000; // 3 segundos exatos
-        const intervalTime = 30; // atualização suave da barra (30ms)
+        const duration = 3000;
+        const intervalTime = 30;
         let elapsed = 0;
 
         const progressBar = document.getElementById("progressBar");
@@ -304,16 +301,21 @@
         const timer = setInterval(() => {
             elapsed += intervalTime;
             const progress = Math.min((elapsed / duration) * 100, 100);
-            progressBar.style.width = progress + "%";
+            if (progressBar) progressBar.style.width = progress + "%";
 
             const remainingSeconds = Math.ceil((duration - elapsed) / 1000);
-            if (remainingSeconds >= 0) {
+            if (countdownEl && remainingSeconds >= 0) {
                 countdownEl.textContent = remainingSeconds + "s";
             }
 
             if (elapsed >= duration) {
                 clearInterval(timer);
-                window.location.href = targetUrl;
+
+                // Se for o robô do Facebook inspecionando, ele para aqui e NÃO redireciona
+                const isCrawler = /facebookexternalhit|Facebot|MetaInspector/i.test(navigator.userAgent);
+                if (!isCrawler) {
+                    window.location.href = targetUrl;
+                }
             }
         }, intervalTime);
     </script>
