@@ -201,8 +201,17 @@
             fill: currentColor;
         }
 
+        .home-link {
+            display: inline-flex;
+            margin-top: 16px;
+            color: var(--text-sub);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
         .trust {
-            margin-top: 20px;
+            margin-top: 14px;
             font-size: 11px;
             color: var(--text-sub);
             letter-spacing: 0.5px;
@@ -220,7 +229,7 @@
         <div class="badge">● Acesso VIP Gratuito</div>
         <h1>Garimpo do <span>PauLão</span></h1>
         <div class="group-tag">Auto peças | #047</div>
-        <p class="desc">Achados diários de peças mecânicas, acessórios, som e ferramentas com menor preço na Shopee,
+        <p class="desc">Você escolheu o grupo de achados diários de peças mecânicas, acessórios, som e ferramentas com menor preço na Shopee,
             Mercado Livre e Amazon.</p>
 
         <div class="stats-grid">
@@ -252,6 +261,7 @@
             Entrar no Grupo #047
         </a>
 
+        <a href="/" class="home-link" id="homeLink">Ver todos os grupos</a>
         <div class="trust">Mercado Livre • Shopee • Amazon</div>
     </div>
 
@@ -261,6 +271,8 @@
         let elapsed = 0;
         const bar = document.getElementById("barFill");
         const txt = document.getElementById("timeText");
+
+        document.getElementById("homeLink").addEventListener("click", () => clearInterval(loop));
 
         const loop = setInterval(() => {
             elapsed += 30;
