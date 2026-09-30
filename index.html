@@ -4,177 +4,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garimpo do PauLão | Promoções VIP</title>
+    <title>Clube Astra | Peças e Ofertas</title>
+
     <style>
         :root {
-            --bg: #060911;
-            --surface: #0f1422;
-            --border: rgba(255, 255, 255, 0.08);
-            --gold: #f5a623;
-            --green: #25D366;
-            --text: #f3f4f6;
-            --text-sub: #9ca3af;
+            --bg-body: #0a0c10;
+            --card-bg: #14171f;
+            --accent-gold: #f5a623;
+            --accent-gold-glow: rgba(245, 166, 35, 0.35);
+            --wpp-green: #25D366;
+            --wpp-hover: #20ba59;
+            --text-main: #f0f3f6;
+            --text-muted: #8b949e;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         body {
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, #162444 0%, var(--bg) 75%);
-            color: var(--text);
+            background-color: var(--bg-body);
+            background-image: radial-gradient(circle at top, #1a2333 0%, var(--bg-body) 70%);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 18px;
+            padding: 16px;
         }
 
-        .container {
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            max-width: 440px;
             width: 100%;
-            max-width: 420px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 28px 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 166, 35, 0.08);
+            position: relative;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
 
-        .avatar-wrap {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 16px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--gold), #ffd200);
-            box-shadow: 0 0 25px rgba(245, 166, 35, 0.35);
+        /* Banner visual do Astra */
+        .banner-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #000;
         }
 
-        .avatar-img {
+        .banner-img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
-            display: block;
-            background: #172138;
+            object-position: center top;
+            filter: brightness(0.9);
+            transform: scale(1.02);
+            transition: transform 0.5s ease;
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(245, 166, 35, 0.12);
-            color: var(--gold);
-            border: 1px solid rgba(245, 166, 35, 0.3);
+        .banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(20, 23, 31, 0) 30%, var(--card-bg) 100%);
+        }
+
+        .badge-vip {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
             font-size: 11px;
             font-weight: 700;
+            letter-spacing: 1px;
             padding: 5px 12px;
             border-radius: 50px;
-            letter-spacing: 0.5px;
+            backdrop-filter: blur(8px);
             text-transform: uppercase;
-            margin-bottom: 12px;
+        }
+
+        /* Conteúdo e Informações */
+        .content {
+            padding: 10px 24px 28px;
+        }
+
+        .group-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            margin: -48px auto 14px;
+            position: relative;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            background: #000;
+        }
+
+        .group-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 800;
+            letter-spacing: -0.3px;
+            color: #fff;
             margin-bottom: 6px;
         }
 
         h1 span {
-            color: var(--gold);
+            color: var(--accent-gold);
         }
 
-        p.desc {
+        .subhead {
             font-size: 13.5px;
-            color: var(--text-sub);
-            line-height: 1.5;
+            color: var(--text-muted);
+            line-height: 1.45;
             margin-bottom: 22px;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .stat-item {
+        /* Barra de Carregamento & Timer */
+        .timer-box {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 22px;
         }
 
-        .stat-val {
-            font-size: 16px;
-            font-weight: 800;
-            color: var(--gold);
-        }
-
-        .stat-lbl {
-            font-size: 11px;
-            color: var(--text-sub);
-            margin-top: 2px;
-        }
-
-        .timer-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 12px 14px;
-            margin-bottom: 20px;
-        }
-
-        .timer-top {
+        .timer-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .timer-count {
+            background: var(--accent-gold);
+            color: #000;
+            font-weight: 800;
             font-size: 12px;
-            color: var(--text-sub);
-            margin-bottom: 8px;
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
-        .timer-top strong {
-            color: var(--gold);
-        }
-
-        .bar-track {
+        .progress-track {
             height: 6px;
-            background: rgba(255, 255, 255, 0.08);
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
         }
 
-        .bar-fill {
+        .progress-bar {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, var(--gold), #ffe082);
+            background: linear-gradient(90deg, var(--accent-gold) 0%, #ffcf70 100%);
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--accent-gold-glow);
             transition: width 0.05s linear;
         }
 
-        .btn-join {
+        /* Botão do WhatsApp com pulso */
+        .btn-wpp {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            width: 100%;
-            background: var(--green);
+            background-color: var(--wpp-green);
             color: #fff;
             text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 14px;
             font-weight: 700;
-            font-size: 15px;
-            padding: 16px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-            animation: pulse 2s infinite;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            transition: all 0.25s ease;
+            position: relative;
+            animation: pulse-wpp 2s infinite;
         }
 
-        @keyframes pulse {
+        @keyframes pulse-wpp {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
             }
@@ -188,16 +210,29 @@
             }
         }
 
-        .btn-join svg {
-            width: 20px;
-            height: 20px;
+        .btn-wpp:hover {
+            background-color: var(--wpp-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-wpp svg {
+            width: 22px;
+            height: 22px;
             fill: currentColor;
         }
 
-        .trust {
+        /* Selos de Parceiros de Desconto */
+        .partners {
             margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            opacity: 0.65;
             font-size: 11px;
-            color: var(--text-sub);
+            font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
@@ -205,69 +240,84 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="avatar-wrap">
-            <img src="/promocoes/paulao-vip.jpg" alt="PauLão Promoções VIP" class="avatar-img"
-                onerror="this.onerror=null;this.src='paulao-vip.jpg';">
-        </div>
-        <div class="badge">● Acesso VIP Gratuito</div>
-        <h1>Garimpo do <span>PauLão</span></h1>
-        <p class="desc">Eletrónicos, utilidades domésticas, ferramentas e achados com cupons de até 90% na Shopee,
-            Mercado Livre e Amazon.</p>
 
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-val">Até 90% OFF</div>
-                <div class="stat-lbl">Cupons e Bugs</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-val">100% Silencioso</div>
-                <div class="stat-lbl">Sem conversas ou spam</div>
-            </div>
+    <div class="card">
+        <!-- Banner Superior com a Imagem do Anúncio -->
+        <div class="banner-wrapper">
+            <span class="badge-vip">Acesso VIP Oficial</span>
+            <img src="astra-banner.jpg" alt="Astra Peças e Acessórios" class="banner-img">
+            <div class="banner-overlay"></div>
         </div>
 
-        <div class="timer-card">
-            <div class="timer-top">
-                <span>A redirecionar em segurança</span>
-                <strong id="timeText">3s</strong>
+        <div class="content">
+            <!-- Ícone/Avatar do Grupo -->
+            <div class="group-avatar">
+                <img src="astra-banner.jpg" alt="Astra Clube">
             </div>
-            <div class="bar-track">
-                <div class="bar-fill" id="barFill"></div>
+
+            <h1>Peças de Astra <span>• Ofertas VIP</span></h1>
+            <p class="subhead">Acessórios, iluminação, ferramentas e peças mecânicas garimpadas com preço de custo.</p>
+
+            <!-- Box do Contador de 3 Segundos -->
+            <div class="timer-box">
+                <div class="timer-label">
+                    <span>A transferir para o WhatsApp...</span>
+                    <span class="timer-count" id="countdown">3s</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+
+            <!-- Botão Direto (Clique para acelerar) -->
+            <a href="https://chat.whatsapp.com/Esl7ExpVfZ394ukbvShIc9" class="btn-wpp" id="wppBtn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.956 2.796.957 3.183 0 5.768-2.587 5.768-5.767 0-3.181-2.586-5.768-5.768-5.768zm7.397 5.766c.002 4.078-3.32 7.398-7.397 7.399-.001 0-.001 0 0 0-1.282 0-2.53-.33-3.623-.956l-4.032 1.058 1.077-3.931c-.684-1.135-1.047-2.434-1.048-3.766.002-4.078 3.32-7.399 7.397-7.399 4.078 0 7.398 3.321 7.398 7.399z" />
+                </svg>
+                Entrar no Grupo Agora
+            </a>
+
+            <!-- Selos de Confiança -->
+            <div class="partners">
+                <span>Mercado Livre</span>
+                <span>•</span>
+                <span>Shopee</span>
+                <span>•</span>
+                <span>Amazon</span>
             </div>
         </div>
-
-        <a href="https://chat.whatsapp.com/DtPfz2OwPBZH400P2bfMp6" class="btn-join">
-            <svg viewBox="0 0 24 24">
-                <path
-                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.956 2.796.957 3.183 0 5.768-2.587 5.768-5.767 0-3.181-2.586-5.768-5.768zm7.397 5.766c.002 4.078-3.32 7.398-7.397 7.399-.001 0-.001 0 0 0-1.282 0-2.53-.33-3.623-.956l-4.032 1.058 1.077-3.931c-.684-1.135-1.047-2.434-1.048-3.766.002-4.078 3.32-7.399 7.397-7.399 4.078 0 7.398 3.321 7.398 7.399z" />
-            </svg>
-            Entrar no Grupo VIP
-        </a>
-
-        <div class="trust">Mercado Livre • Shopee • Amazon</div>
     </div>
 
     <script>
-        const targetUrl = "https://chat.whatsapp.com/DtPfz2OwPBZH400P2bfMp6";
+        const targetUrl = "https://chat.whatsapp.com/Esl7ExpVfZ394ukbvShIc9";
         const duration = 3000;
+        const intervalTime = 30;
         let elapsed = 0;
-        const bar = document.getElementById("barFill");
-        const txt = document.getElementById("timeText");
 
-        const loop = setInterval(() => {
-            elapsed += 30;
-            const pct = Math.min((elapsed / duration) * 100, 100);
-            if (bar) bar.style.width = pct + "%";
-            const sec = Math.ceil((duration - elapsed) / 1000);
-            if (txt && sec >= 0) txt.textContent = sec + "s";
+        const progressBar = document.getElementById("progressBar");
+        const countdownEl = document.getElementById("countdown");
+
+        const timer = setInterval(() => {
+            elapsed += intervalTime;
+            const progress = Math.min((elapsed / duration) * 100, 100);
+            if (progressBar) progressBar.style.width = progress + "%";
+
+            const remainingSeconds = Math.ceil((duration - elapsed) / 1000);
+            if (countdownEl && remainingSeconds >= 0) {
+                countdownEl.textContent = remainingSeconds + "s";
+            }
 
             if (elapsed >= duration) {
-                clearInterval(loop);
-                if (!/facebookexternalhit|Facebot|MetaInspector/i.test(navigator.userAgent)) {
+                clearInterval(timer);
+
+                // Se for o robô do Facebook inspecionando, ele para aqui e NÃO redireciona
+                const isCrawler = /facebookexternalhit|Facebot|MetaInspector/i.test(navigator.userAgent);
+                if (!isCrawler) {
                     window.location.href = targetUrl;
                 }
             }
-        }, 30);
+        }, intervalTime);
     </script>
 </body>
 
