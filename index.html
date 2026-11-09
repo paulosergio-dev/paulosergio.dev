@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#07080c">
     <meta name="description"
-        content="Garimpo do PauLão. Achados do dia no menor preço, direto no WhatsApp. Escolha o grupo do seu interesse: Peças Astra, Carros, Motos e Promoções VIP.">
+        content="Garimpo do PauLão. Achados do dia no menor preço, direto no WhatsApp. Escolha seu grupo: Promoções VIP, Carros, Motos, Peças Astra e Peças de Kadett.">
     <meta property="og:title" content="Garimpo do PauLão | Achados no menor preço">
-    <meta property="og:description" content="Escolha seu grupo e entre no WhatsApp. Grátis, silencioso e com achado novo todo dia.">
+    <meta property="og:description" content="Entre grátis no grupo do seu interesse. Achado novo todo dia, silencioso e sem spam.">
     <meta property="og:type" content="website">
     <title>Garimpo do PauLão | Grupos no WhatsApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,11 +81,11 @@
         /* ---------- HERO ---------- */
         .hero {
             position: relative;
-            min-height: 52dvh;
+            min-height: 58dvh;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: calc(18px + var(--safe-top)) 22px 30px;
+            padding: calc(18px + var(--safe-top)) 22px 26px;
             isolation: isolate;
             overflow: hidden;
         }
@@ -108,7 +108,7 @@
             inset: 0;
             z-index: -1;
             background:
-                linear-gradient(180deg, rgba(7, 8, 12, 0.55) 0%, rgba(7, 8, 12, 0.1) 32%, rgba(7, 8, 12, 0.6) 62%, rgba(7, 8, 12, 0.94) 86%, var(--bg) 100%);
+                linear-gradient(180deg, rgba(7, 8, 12, 0.55) 0%, rgba(7, 8, 12, 0.1) 30%, rgba(7, 8, 12, 0.6) 60%, rgba(7, 8, 12, 0.95) 85%, var(--bg) 100%);
         }
 
         .topline {
@@ -173,35 +173,38 @@
             animation: pulse 1.8s infinite;
         }
 
-        .eyebrow {
+        .stars {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 11.5px;
-            font-weight: 800;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--gold-soft);
-            margin-bottom: 12px;
-            animation: rise 0.7s 0.05s both;
+            gap: 7px;
+            margin-bottom: 14px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+            animation: rise 0.7s 0.02s both;
         }
 
-        .eyebrow::before {
-            content: "";
-            width: 22px;
-            height: 1.5px;
-            background: linear-gradient(90deg, var(--gold), transparent);
+        .stars .s {
+            color: var(--gold);
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        .stars span {
+            color: #d8d2c6;
+            font-weight: 600;
         }
 
         h1 {
             font-family: Fraunces, Georgia, serif;
             font-weight: 500;
-            font-size: clamp(42px, 12.5vw, 58px);
+            font-size: clamp(40px, 12vw, 56px);
             line-height: 0.9;
             letter-spacing: -0.03em;
-            max-width: 11ch;
+            max-width: 12ch;
             text-shadow: 0 12px 34px rgba(0, 0, 0, 0.55);
-            animation: rise 0.7s 0.12s both;
+            animation: rise 0.7s 0.1s both;
         }
 
         h1 em {
@@ -217,13 +220,66 @@
 
         .hero-sub {
             margin-top: 14px;
-            max-width: 30ch;
+            max-width: 32ch;
             color: #e7e1d5;
-            font-size: 15px;
+            font-size: 15.5px;
             line-height: 1.45;
             font-weight: 500;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-            animation: rise 0.7s 0.18s both;
+            animation: rise 0.7s 0.16s both;
+        }
+
+        /* ---------- LIVE FEED ---------- */
+        .ticker {
+            position: relative;
+            z-index: 2;
+            margin: 0 16px;
+            margin-top: -14px;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 12px 14px;
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(37, 211, 102, 0.12), rgba(37, 211, 102, 0.04));
+            border: 1px solid rgba(37, 211, 102, 0.28);
+            box-shadow: 0 16px 36px -18px rgba(0, 0, 0, 0.9);
+            animation: rise 0.7s 0.22s both;
+        }
+
+        .ticker .dot {
+            flex: none;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--wpp);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            animation: pulse 1.8s infinite;
+        }
+
+        .ticker .feed {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .ticker .feed .lbl {
+            display: block;
+            font-size: 9.5px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--wpp);
+            font-weight: 800;
+            margin-bottom: 1px;
+        }
+
+        .ticker .feed .msg {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #eef3ee;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            animation: feedIn 0.5s ease;
         }
 
         /* ---------- SHEET ---------- */
@@ -231,15 +287,15 @@
             position: relative;
             z-index: 2;
             background: var(--bg);
-            padding: 6px 16px calc(30px + var(--safe-bottom));
+            padding: 20px 16px calc(30px + var(--safe-bottom));
         }
 
         .facts {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 8px;
-            margin: 2px 0 24px;
-            animation: rise 0.7s 0.24s both;
+            margin: 0 0 26px;
+            animation: rise 0.7s 0.28s both;
         }
 
         .fact {
@@ -247,24 +303,25 @@
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
             border: 1px solid var(--line);
             border-radius: 15px;
-            padding: 13px 6px;
+            padding: 14px 6px;
             text-align: center;
         }
 
-        .fact svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--gold);
-            fill: none;
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            margin-bottom: 5px;
+        .fact .num {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1;
+            background: linear-gradient(105deg, #f6b340, #fff4d2 60%, #f5a623);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .fact strong {
             display: block;
-            font-size: 12.5px;
+            margin-top: 5px;
+            font-size: 12px;
             font-weight: 800;
             color: var(--ink);
         }
@@ -272,7 +329,7 @@
         .fact span {
             display: block;
             margin-top: 1px;
-            font-size: 10.5px;
+            font-size: 10px;
             color: var(--muted);
         }
 
@@ -290,7 +347,7 @@
             font-weight: 800;
         }
 
-        .section-head span {
+        .section-head .count {
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -301,6 +358,14 @@
             border-radius: 999px;
             background: rgba(245, 166, 35, 0.1);
             border: 1px solid rgba(245, 166, 35, 0.22);
+        }
+
+        .section-head .count b {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--wpp);
+            animation: pulse 1.8s infinite;
         }
 
         .groups {
@@ -355,6 +420,22 @@
         .group:focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 3px;
+        }
+
+        .group .badge {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            z-index: 2;
+            font-size: 8.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 7px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--accent) 20%, #0c0e14);
+            border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+            color: var(--accent);
         }
 
         .thumb {
@@ -443,9 +524,103 @@
             transform: translateX(3px);
         }
 
+        /* ---------- STEPS ---------- */
+        .steps {
+            margin-top: 30px;
+            animation: rise 0.7s both;
+        }
+
+        .steps .head {
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin: 0 4px 14px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 34px 1fr;
+            gap: 13px;
+            align-items: flex-start;
+            padding: 12px 4px;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 42px;
+            bottom: -6px;
+            width: 1.5px;
+            background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 45%, transparent), transparent);
+        }
+
+        .step .n {
+            width: 34px;
+            height: 34px;
+            border-radius: 11px;
+            display: grid;
+            place-items: center;
+            font-family: Fraunces, serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold);
+            background: rgba(245, 166, 35, 0.1);
+            border: 1px solid rgba(245, 166, 35, 0.28);
+        }
+
+        .step .t {
+            font-size: 14.5px;
+            font-weight: 800;
+            margin-top: 6px;
+        }
+
+        .step .d {
+            font-size: 12.5px;
+            color: var(--muted);
+            line-height: 1.4;
+            margin-top: 2px;
+        }
+
+        /* ---------- TESTIMONIAL ---------- */
+        .quote {
+            margin-top: 26px;
+            padding: 18px 18px 16px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, rgba(245, 166, 35, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(245, 166, 35, 0.2);
+            animation: rise 0.7s both;
+        }
+
+        .quote .s {
+            color: var(--gold);
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .quote p {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 500;
+            font-style: italic;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #efe9dc;
+        }
+
+        .quote .by {
+            margin-top: 10px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+        }
+
         /* ---------- FOOTER ---------- */
         .marquee {
-            margin-top: 26px;
+            margin-top: 28px;
             text-align: center;
         }
 
@@ -476,7 +651,7 @@
         }
 
         .note {
-            margin-top: 20px;
+            margin-top: 22px;
             text-align: center;
             color: var(--muted);
             font-size: 11.5px;
@@ -484,10 +659,11 @@
         }
 
         /* ---------- ANIM ---------- */
-        .g1 { animation-delay: 0.28s; }
-        .g2 { animation-delay: 0.34s; }
-        .g3 { animation-delay: 0.40s; }
-        .g4 { animation-delay: 0.46s; }
+        .g1 { animation-delay: 0.30s; }
+        .g2 { animation-delay: 0.36s; }
+        .g3 { animation-delay: 0.42s; }
+        .g4 { animation-delay: 0.48s; }
+        .g5 { animation-delay: 0.54s; }
 
         @keyframes shine {
             to { background-position: 200% center; }
@@ -507,9 +683,14 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes feedIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (prefers-reduced-motion: reduce) {
-            .hero-photo, h1 em, .live b,
-            .eyebrow, h1, .hero-sub, .facts, .group {
+            .hero-photo, h1 em, .live b, .ticker .dot,
+            .stars, h1, .hero-sub, .facts, .group, .ticker {
                 animation: none;
             }
         }
@@ -528,37 +709,49 @@
                 <div class="mark"><i>GP</i> PauLão</div>
                 <div class="live"><b></b> Ao vivo</div>
             </div>
-            <p class="eyebrow">Ofertas no WhatsApp</p>
+            <div class="stars">
+                <span class="s">★★★★★</span>
+                <span>+12 mil garimpeiros economizando</span>
+            </div>
             <h1>Garimpo do <em>PauLão</em></h1>
-            <p class="hero-sub">O especialista em garimpar o menor preço. Achado novo todo dia, direto no seu WhatsApp.</p>
+            <p class="hero-sub">O caçador do menor preço. Todo dia um achado novo na Shopee, Mercado Livre e Amazon &mdash; direto no seu WhatsApp.</p>
         </header>
+
+        <div class="ticker" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="feed">
+                <span class="lbl">Achado agora</span>
+                <span class="msg" id="feedMsg">Console Central GM Kadett &mdash; R$ 163,90</span>
+            </span>
+        </div>
 
         <section class="sheet" aria-labelledby="grupos-titulo">
             <div class="facts">
                 <div class="fact">
-                    <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <strong>100% grátis</strong>
-                    <span>para entrar</span>
+                    <span class="num" data-count="12">0</span><span style="font-family:Fraunces,serif;font-size:22px;color:var(--gold)">k+</span>
+                    <strong>Garimpeiros</strong>
+                    <span>já economizam</span>
                 </div>
                 <div class="fact">
-                    <svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v3"/></svg>
-                    <strong>Silêncio</strong>
-                    <span>sem spam</span>
+                    <span class="num" data-count="70">0</span><span style="font-family:Fraunces,serif;font-size:22px;color:var(--gold)">%</span>
+                    <strong>Até de desconto</strong>
+                    <span>em achados reais</span>
                 </div>
                 <div class="fact">
-                    <svg viewBox="0 0 24 24"><path d="M13 2L4.5 12.5H11l-1 9.5L19.5 11H13z"/></svg>
-                    <strong>Todo dia</strong>
-                    <span>achado novo</span>
+                    <span class="num" data-count="5">0</span>
+                    <strong>Grupos ativos</strong>
+                    <span>achado todo dia</span>
                 </div>
             </div>
 
             <div class="section-head">
                 <h2 id="grupos-titulo">Escolha seu grupo</h2>
-                <span>● 4 abertos</span>
+                <span class="count"><b></b> 5 abertos</span>
             </div>
 
             <nav class="groups" aria-label="Grupos do Garimpo do PauLão">
                 <a class="group g1" href="/promocoes" style="--accent:#34d399">
+                    <span class="badge">Mais popular</span>
                     <span class="thumb" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
                             <path d="M20.6 11.4l-8-8A2 2 0 0 0 11.2 3H5a2 2 0 0 0-2 2v6.2a2 2 0 0 0 .6 1.4l8 8a2 2 0 0 0 2.8 0l6.2-6.2a2 2 0 0 0 0-2.8z"/>
@@ -620,7 +813,56 @@
                     </span>
                     <span class="enter">Entrar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
+
+                <a class="group g5" href="/kadett" style="--accent:#a78bfa">
+                    <span class="badge">Novo</span>
+                    <span class="thumb" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 13l1.8-4.6A2 2 0 0 1 6.7 7h10.6a2 2 0 0 1 1.9 1.4L21 13"/>
+                            <path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+                            <circle cx="7" cy="15.5" r="1"/><circle cx="17" cy="15.5" r="1"/>
+                            <path d="M9 7l1-2h4l1 2"/>
+                        </svg>
+                    </span>
+                    <span class="info">
+                        <span class="kicker">Clube Kadett · #25</span>
+                        <span class="name">Peças de Kadett</span>
+                        <span class="desc">Acessórios, mecânica e acabamento</span>
+                    </span>
+                    <span class="enter">Entrar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
             </nav>
+
+            <div class="steps">
+                <div class="head">Como funciona</div>
+                <div class="step">
+                    <span class="n">1</span>
+                    <div>
+                        <div class="t">Escolha seu grupo</div>
+                        <div class="d">Toque no tema que combina com você. É grátis e leva 1 toque.</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="n">2</span>
+                    <div>
+                        <div class="t">Entre no WhatsApp</div>
+                        <div class="d">Você cai direto no grupo, sem cadastro e sem complicação.</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="n">3</span>
+                    <div>
+                        <div class="t">Receba os achados</div>
+                        <div class="d">Todo dia um garimpo novo no menor preço, no seu bolso.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote">
+                <div class="s">★★★★★</div>
+                <p>“Comprei peça que não achava em lugar nenhum e ainda saiu mais barato que na loja. O PauLão garimpa de verdade.”</p>
+                <div class="by">— Membro do grupo Peças Astra</div>
+            </div>
 
             <div class="marquee">
                 <div class="label">Garimpado em</div>
@@ -632,9 +874,58 @@
                 </div>
             </div>
 
-            <p class="note">Toque no grupo do seu interesse e entre direto no WhatsApp.</p>
+            <p class="note">100% grátis · silencioso · sem spam<br>Toque no grupo do seu interesse e entre direto no WhatsApp.</p>
         </section>
     </main>
+
+    <script>
+        // Feed de achados ao vivo (gera FOMO)
+        const achados = [
+            "Console Central GM Kadett — R$ 163,90",
+            "Relógio Crono GM Monza/Kadett — R$ 235,00",
+            "Kit Buchas Suspensão Astra — 48% OFF",
+            "Capacete Fechado c/ Viseira — R$ 149,90",
+            "Jogo de Calotas Aro 14 — R$ 89,90",
+            "Pastilha de Freio Cerâmica — 55% OFF",
+            "Farol Milha Universal LED — R$ 64,90",
+            "Kit Som Automotivo 4 Alto-falantes — R$ 199,00"
+        ];
+        const feedMsg = document.getElementById("feedMsg");
+        let fi = 0;
+        setInterval(() => {
+            fi = (fi + 1) % achados.length;
+            if (!feedMsg) return;
+            feedMsg.style.animation = "none";
+            void feedMsg.offsetWidth;
+            feedMsg.style.animation = "feedIn 0.5s ease";
+            feedMsg.textContent = achados[fi];
+        }, 2800);
+
+        // Contadores animados quando aparecem na tela
+        const counters = document.querySelectorAll(".num[data-count]");
+        const animate = (el) => {
+            const target = +el.dataset.count;
+            const dur = 1100;
+            const start = performance.now();
+            const tick = (now) => {
+                const p = Math.min((now - start) / dur, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(target * eased);
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        };
+        if ("IntersectionObserver" in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e) => {
+                    if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.6 });
+            counters.forEach((c) => io.observe(c));
+        } else {
+            counters.forEach(animate);
+        }
+    </script>
 </body>
 
 </html>
