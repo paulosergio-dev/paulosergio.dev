@@ -3,271 +3,175 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garimpo do PauLão - Auto peças | #047</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#07080c">
+    <meta name="description" content="Grupo de Auto Peças do Garimpo do PauLão. Peças mecânicas, acessórios, som e ferramentas multimarcas no menor preço.">
+    <title>Garimpo do PauLão | Auto Peças #047</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #07090e;
-            --surface: #11151f;
-            --border: rgba(255, 255, 255, 0.08);
-            --gold: #f5a623;
-            --green: #25D366;
-            --text: #f3f4f6;
-            --text-sub: #9ca3af;
+            --accent: #4aa3ff;
+            --accent-soft: #a9d3ff;
+            --brand: #f5a623;
+            --brand-soft: #ffd98a;
+            --img-pos: center 20%;
+            --bg: #07080c;
+            --bg-2: #0c0e15;
+            --ink: #f6f1e7;
+            --muted: #a8a294;
+            --wpp: #25d366;
+            --line: rgba(255, 244, 220, 0.09);
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        html { background: #05060a; }
 
         body {
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, #172338 0%, var(--bg) 75%);
-            color: var(--text);
-            min-height: 100vh;
+            min-height: 100dvh;
+            color: var(--ink);
+            font-family: Manrope, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(70% 45% at 50% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
+                #05060a;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 18px;
+            padding: max(18px, var(--safe-top)) 16px max(18px, var(--safe-bottom));
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            width: 100%;
-            max-width: 420px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 28px 24px;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        .stage { position: relative; width: 100%; max-width: 430px; animation: rise 0.6s both; }
+
+        .stage::before {
+            content: "";
+            position: absolute;
+            inset: -40px -10px 20px;
+            z-index: -1;
+            background: radial-gradient(60% 45% at 50% 20%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%);
+            filter: blur(20px);
         }
 
-        .avatar-wrap {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 16px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--gold), #ff7a00);
-            box-shadow: 0 0 25px rgba(245, 166, 35, 0.35);
-        }
-
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            background: #1a2233;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(245, 166, 35, 0.12);
-            color: var(--gold);
-            border: 1px solid rgba(245, 166, 35, 0.3);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 5px 12px;
-            border-radius: 50px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        h1 {
-            font-size: 21px;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-
-        h1 span {
-            color: var(--gold);
-        }
-
-        .group-tag {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 8px;
-        }
-
-        p.desc {
-            font-size: 13.5px;
-            color: var(--text-sub);
-            line-height: 1.5;
-            margin-bottom: 22px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .stat-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 10px;
-        }
-
-        .stat-val {
-            font-size: 15px;
-            font-weight: 800;
-            color: var(--gold);
-        }
-
-        .stat-lbl {
-            font-size: 11px;
-            color: var(--text-sub);
-            margin-top: 2px;
-        }
-
-        .timer-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 12px 14px;
-            margin-bottom: 20px;
-        }
-
-        .timer-top {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: var(--text-sub);
-            margin-bottom: 8px;
-        }
-
-        .timer-top strong {
-            color: var(--gold);
-        }
-
-        .bar-track {
-            height: 6px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
+        .card {
+            position: relative;
+            border-radius: 26px;
             overflow: hidden;
+            background: linear-gradient(180deg, var(--bg-2), var(--bg));
+            border: 1px solid var(--line);
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
         }
 
-        .bar-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--gold), #ffcf70);
-            transition: width 0.05s linear;
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 26px;
+            padding: 1px;
+            background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 55%, transparent), transparent 40%);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
         }
 
-        .btn-join {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            background: var(--green);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            padding: 16px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-            animation: pulse 2s infinite;
+        .media { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #0d1117; }
+        .media img { width: 100%; height: 100%; object-fit: cover; object-position: var(--img-pos); transform: scale(1.02); }
+        .media .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 8, 12, 0.15) 0%, transparent 30%, transparent 55%, var(--bg-2) 100%); }
+
+        .chip {
+            position: absolute; top: 14px; left: 14px;
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 6px 12px; border-radius: 999px;
+            background: rgba(7, 8, 12, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #fff;
         }
+        .chip b { width: 7px; height: 7px; border-radius: 50%; background: var(--wpp); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); animation: pulse 1.8s infinite; }
 
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-            }
+        .body { position: relative; padding: 4px 22px 24px; text-align: center; }
 
-            70% {
-                box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
-            }
+        .brand { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+        .brand i { width: 26px; height: 26px; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(150deg, var(--brand-soft), var(--brand) 55%, #c47a09); color: #1a1206; font-style: normal; font-size: 10px; font-weight: 800; }
 
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
+        h1 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(30px, 8.5vw, 38px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 12px; }
 
-        .btn-join svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
+        .tag { display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 14%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 0.04em; margin-bottom: 14px; }
 
-        .home-link {
-            display: inline-flex;
-            margin-top: 16px;
-            color: var(--text-sub);
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-        }
+        .desc { color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 34ch; margin: 0 auto 20px; }
 
-        .trust {
-            margin-top: 14px;
-            font-size: 11px;
-            color: var(--text-sub);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .stat { background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)); border: 1px solid var(--line); border-radius: 16px; padding: 13px 10px; }
+        .stat .v { font-size: 15px; font-weight: 800; color: var(--accent); }
+        .stat .l { margin-top: 3px; font-size: 11px; color: var(--muted); }
+
+        .timer { background: rgba(255, 255, 255, 0.025); border: 1px solid var(--line); border-radius: 16px; padding: 13px 15px; margin-bottom: 16px; text-align: left; }
+        .timer-top { display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; color: var(--muted); margin-bottom: 9px; }
+        .timer-top b { background: var(--accent); color: #05060a; font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 7px; }
+        .track { height: 7px; background: rgba(255, 255, 255, 0.08); border-radius: 10px; overflow: hidden; }
+        .fill { height: 100%; width: 0%; border-radius: 10px; background: linear-gradient(90deg, var(--accent), var(--accent-soft)); box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 60%, transparent); transition: width 0.05s linear; }
+
+        .cta { display: flex; align-items: center; justify-content: center; gap: 11px; width: 100%; background: linear-gradient(180deg, #2ee06f, var(--wpp)); color: #04220f; text-decoration: none; font-weight: 800; font-size: 16px; letter-spacing: -0.01em; padding: 17px; border-radius: 16px; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4); animation: pulseBtn 2.2s infinite; }
+        .cta svg { width: 22px; height: 22px; fill: currentColor; }
+
+        .back { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; color: var(--muted); font-size: 13px; font-weight: 700; text-decoration: none; }
+        .back svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+        .trust { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+        @keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        @keyframes pulseBtn { 0% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 16px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); } }
+        @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (prefers-reduced-motion: reduce) { .stage, .cta, .chip b { animation: none; } }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="avatar-wrap">
-            <img src="paulao.png" alt="PauLão Auto peças" class="avatar-img"
-                onerror="this.onerror=null;this.src='/carros/paulao.png';">
+    <div class="stage">
+        <div class="card">
+            <div class="media">
+                <img src="/carros/paulao.png" alt="PauLão especialista em auto peças">
+                <div class="fade"></div>
+                <span class="chip"><b></b> Grupo aberto</span>
+            </div>
+            <div class="body">
+                <div class="brand"><i>GP</i> Garimpo do PauLão</div>
+                <h1>Carros</h1>
+                <div class="tag">Auto peças · #047</div>
+                <p class="desc">Você escolheu o grupo de peças mecânicas, acessórios, som e ferramentas multimarcas com o menor preço na Shopee, Mercado Livre e Amazon.</p>
+
+                <div class="stats">
+                    <div class="stat"><div class="v">Até 70% OFF</div><div class="l">Peças verificadas</div></div>
+                    <div class="stat"><div class="v">100% silencioso</div><div class="l">Sem conversas ou spam</div></div>
+                </div>
+
+                <div class="timer">
+                    <div class="timer-top"><span>Entrando no grupo em…</span><b id="timeText">4s</b></div>
+                    <div class="track"><div class="fill" id="barFill"></div></div>
+                </div>
+
+                <a href="https://chat.whatsapp.com/KpzsPz3O4M2FUcAhj1G7EB" class="cta">
+                    <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.956 2.796.957 3.183 0 5.768-2.587 5.768-5.767 0-3.181-2.586-5.768-5.768-5.768zm7.397 5.766c.002 4.078-3.32 7.398-7.397 7.399-.001 0-.001 0 0 0-1.282 0-2.53-.33-3.623-.956l-4.032 1.058 1.077-3.931c-.684-1.135-1.047-2.434-1.048-3.766.002-4.078 3.32-7.399 7.397-7.399 4.078 0 7.398 3.321 7.398 7.399z"/></svg>
+                    Entrar no grupo de Carros
+                </a>
+
+                <a href="/" class="back" id="homeLink">
+                    <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+                    Ver todos os grupos
+                </a>
+
+                <div class="trust">Mercado Livre · Shopee · Amazon</div>
+            </div>
         </div>
-        <div class="badge">● Acesso VIP Gratuito</div>
-        <h1>Garimpo do <span>PauLão</span></h1>
-        <div class="group-tag">Auto peças | #047</div>
-        <p class="desc">Você escolheu o grupo de achados diários de peças mecânicas, acessórios, som e ferramentas com menor preço na Shopee,
-            Mercado Livre e Amazon.</p>
-
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-val">Até 70% OFF</div>
-                <div class="stat-lbl">Peças Verificadas</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-val">100% Silencioso</div>
-                <div class="stat-lbl">Sem conversas ou spam</div>
-            </div>
-        </div>
-
-        <div class="timer-card">
-            <div class="timer-top">
-                <span>A redirecionar em segurança</span>
-                <strong id="timeText">3s</strong>
-            </div>
-            <div class="bar-track">
-                <div class="bar-fill" id="barFill"></div>
-            </div>
-        </div>
-
-        <a href="https://chat.whatsapp.com/KpzsPz3O4M2FUcAhj1G7EB" class="btn-join">
-            <svg viewBox="0 0 24 24">
-                <path
-                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.956 2.796.957 3.183 0 5.768-2.587 5.768-5.767 0-3.181-2.586-5.768-5.768-5.768zm7.397 5.766c.002 4.078-3.32 7.398-7.397 7.399-.001 0-.001 0 0 0-1.282 0-2.53-.33-3.623-.956l-4.032 1.058 1.077-3.931c-.684-1.135-1.047-2.434-1.048-3.766.002-4.078 3.32-7.399 7.397-7.399 4.078 0 7.398 3.321 7.398 7.399z" />
-            </svg>
-            Entrar no Grupo #047
-        </a>
-
-        <a href="/" class="home-link" id="homeLink">Ver todos os grupos</a>
-        <div class="trust">Mercado Livre • Shopee • Amazon</div>
     </div>
 
     <script>
         const targetUrl = "https://chat.whatsapp.com/KpzsPz3O4M2FUcAhj1G7EB";
-        const duration = 3000;
+        const duration = 4000;
         let elapsed = 0;
         const bar = document.getElementById("barFill");
         const txt = document.getElementById("timeText");
@@ -280,7 +184,6 @@
             if (bar) bar.style.width = pct + "%";
             const sec = Math.ceil((duration - elapsed) / 1000);
             if (txt && sec >= 0) txt.textContent = sec + "s";
-
             if (elapsed >= duration) {
                 clearInterval(loop);
                 if (!/facebookexternalhit|Facebot|MetaInspector/i.test(navigator.userAgent)) {

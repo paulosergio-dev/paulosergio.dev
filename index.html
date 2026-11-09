@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#07080c">
     <meta name="description"
-        content="Garimpo do PauLão. Escolha o grupo do seu interesse e entre no WhatsApp: peças Astra, carros, motos e promoções.">
+        content="Garimpo do PauLão. Achados do dia no menor preço, direto no WhatsApp. Escolha o grupo do seu interesse: Peças Astra, Carros, Motos e Promoções VIP.">
+    <meta property="og:title" content="Garimpo do PauLão | Achados no menor preço">
+    <meta property="og:description" content="Escolha seu grupo e entre no WhatsApp. Grátis, silencioso e com achado novo todo dia.">
+    <meta property="og:type" content="website">
     <title>Garimpo do PauLão | Grupos no WhatsApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,560;1,9..144,650&family=Manrope:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600;1,9..144,700&family=Manrope:wght@500;600;700;800&display=swap"
         rel="stylesheet">
     <style>
         :root {
             --bg: #07080c;
+            --bg-2: #0b0d14;
             --ink: #f6f1e7;
-            --muted: #b7b0a4;
+            --muted: #a8a294;
             --gold: #f5a623;
             --gold-soft: #ffe1a3;
-            --line: rgba(255, 244, 220, 0.1);
-            --card: #12141b;
+            --wpp: #25d366;
+            --line: rgba(255, 244, 220, 0.09);
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
@@ -30,10 +34,12 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
             background: #05060a;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -41,32 +47,47 @@
             color: var(--ink);
             font-family: Manrope, "Segoe UI", sans-serif;
             background:
-                radial-gradient(520px 280px at 50% -40px, rgba(245, 166, 35, 0.22), transparent 70%),
+                radial-gradient(560px 300px at 50% -60px, rgba(245, 166, 35, 0.2), transparent 70%),
                 #05060a;
             display: flex;
             justify-content: center;
+            -webkit-font-smoothing: antialiased;
         }
 
         .app {
+            position: relative;
             width: 100%;
             max-width: 480px;
             min-width: 0;
             min-height: 100dvh;
             background:
-                radial-gradient(120% 42% at 50% 0%, rgba(245, 166, 35, 0.16), transparent 58%),
-                var(--bg);
-            position: relative;
+                radial-gradient(130% 40% at 50% 0%, rgba(245, 166, 35, 0.14), transparent 60%),
+                linear-gradient(180deg, var(--bg-2), var(--bg) 40%);
             overflow: hidden;
+            isolation: isolate;
         }
 
+        /* textura sutil */
+        .app::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            pointer-events: none;
+            opacity: 0.045;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* ---------- HERO ---------- */
         .hero {
             position: relative;
-            min-height: 46dvh;
+            min-height: 52dvh;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: calc(16px + var(--safe-top)) 20px 26px;
+            padding: calc(18px + var(--safe-top)) 22px 30px;
             isolation: isolate;
+            overflow: hidden;
         }
 
         .hero-photo {
@@ -75,10 +96,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 18%;
+            object-position: center 15%;
             z-index: -2;
-            transform: scale(1.04);
-            animation: drift 18s ease-in-out infinite alternate;
+            transform: scale(1.05);
+            animation: drift 20s ease-in-out infinite alternate;
         }
 
         .hero::after {
@@ -87,14 +108,14 @@
             inset: 0;
             z-index: -1;
             background:
-                linear-gradient(180deg, rgba(7, 8, 12, 0.35) 0%, rgba(7, 8, 12, 0.12) 36%, rgba(7, 8, 12, 0.82) 78%, var(--bg) 100%);
+                linear-gradient(180deg, rgba(7, 8, 12, 0.55) 0%, rgba(7, 8, 12, 0.1) 32%, rgba(7, 8, 12, 0.6) 62%, rgba(7, 8, 12, 0.94) 86%, var(--bg) 100%);
         }
 
         .topline {
             position: absolute;
-            top: calc(14px + var(--safe-top));
-            left: 20px;
-            right: 20px;
+            top: calc(16px + var(--safe-top));
+            left: 22px;
+            right: 22px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -104,39 +125,42 @@
         .mark {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 9px;
             color: #fff;
             font-size: 12px;
             font-weight: 800;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
         }
 
         .mark i {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            border-radius: 11px;
             display: grid;
             place-items: center;
-            background: linear-gradient(160deg, var(--gold-soft), var(--gold) 55%, #c47a09);
+            background: linear-gradient(150deg, var(--gold-soft), var(--gold) 52%, #c47a09);
             color: #1a1206;
             font-style: normal;
-            font-size: 11px;
-            box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.16);
+            font-size: 12px;
+            font-weight: 800;
+            box-shadow: 0 6px 18px rgba(245, 166, 35, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
         }
 
         .live {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            padding: 6px 10px;
+            padding: 7px 12px;
             border-radius: 999px;
-            background: rgba(7, 8, 12, 0.55);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            backdrop-filter: blur(8px);
+            background: rgba(7, 8, 12, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
         }
 
@@ -144,68 +168,98 @@
             width: 7px;
             height: 7px;
             border-radius: 50%;
-            background: #3ddc84;
-            box-shadow: 0 0 0 0 rgba(61, 220, 132, 0.7);
+            background: var(--wpp);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             animation: pulse 1.8s infinite;
         }
 
         .eyebrow {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.16em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--gold-soft);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            animation: rise 0.7s 0.05s both;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 22px;
+            height: 1.5px;
+            background: linear-gradient(90deg, var(--gold), transparent);
         }
 
         h1 {
             font-family: Fraunces, Georgia, serif;
-            font-weight: 560;
-            font-size: clamp(40px, 11vw, 54px);
-            line-height: 0.92;
+            font-weight: 500;
+            font-size: clamp(42px, 12.5vw, 58px);
+            line-height: 0.9;
             letter-spacing: -0.03em;
             max-width: 11ch;
-            text-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+            text-shadow: 0 12px 34px rgba(0, 0, 0, 0.55);
+            animation: rise 0.7s 0.12s both;
         }
 
         h1 em {
             font-style: italic;
-            font-weight: 650;
-            background: linear-gradient(105deg, #f6b340 0%, #fff4d2 42%, #f5a623 78%);
-            background-size: 180% auto;
+            font-weight: 600;
+            background: linear-gradient(105deg, #f6b340 0%, #fff4d2 44%, #f5a623 80%);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: shine 5.5s linear infinite;
+            animation: shine 5s linear infinite;
         }
 
+        .hero-sub {
+            margin-top: 14px;
+            max-width: 30ch;
+            color: #e7e1d5;
+            font-size: 15px;
+            line-height: 1.45;
+            font-weight: 500;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+            animation: rise 0.7s 0.18s both;
+        }
+
+        /* ---------- SHEET ---------- */
         .sheet {
             position: relative;
+            z-index: 2;
             background: var(--bg);
-            padding: 4px 16px calc(28px + var(--safe-bottom));
-        }
-
-        .lead {
-            color: #d9d2c6;
-            font-size: 15.5px;
-            line-height: 1.45;
-            margin: 0 4px 16px;
+            padding: 6px 16px calc(30px + var(--safe-bottom));
         }
 
         .facts {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 8px;
-            margin-bottom: 22px;
+            margin: 2px 0 24px;
+            animation: rise 0.7s 0.24s both;
         }
 
         .fact {
             min-width: 0;
-            background: rgba(255, 255, 255, 0.035);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
             border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 10px 6px;
+            border-radius: 15px;
+            padding: 13px 6px;
             text-align: center;
+        }
+
+        .fact svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-bottom: 5px;
         }
 
         .fact strong {
@@ -217,78 +271,109 @@
 
         .fact span {
             display: block;
-            margin-top: 2px;
-            font-size: 11px;
+            margin-top: 1px;
+            font-size: 10.5px;
             color: var(--muted);
         }
 
         .section-head {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             justify-content: space-between;
-            margin: 0 4px 12px;
+            margin: 0 4px 14px;
         }
 
         .section-head h2 {
             font-size: 13px;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             font-weight: 800;
         }
 
         .section-head span {
-            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11.5px;
             color: var(--gold);
             font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(245, 166, 35, 0.1);
+            border: 1px solid rgba(245, 166, 35, 0.22);
         }
 
         .groups {
             display: grid;
-            gap: 10px;
+            gap: 11px;
         }
 
         .group {
             --accent: var(--gold);
+            position: relative;
             display: grid;
-            grid-template-columns: 54px 1fr auto;
-            gap: 12px;
+            grid-template-columns: 56px 1fr auto;
+            gap: 13px;
             align-items: center;
-            min-height: 86px;
-            padding: 12px 12px 12px 14px;
+            min-height: 88px;
+            padding: 13px 14px;
             border-radius: 20px;
             text-decoration: none;
             color: inherit;
-            background:
-                linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.018));
             border: 1px solid var(--line);
-            box-shadow: inset 3px 0 0 var(--accent);
-            transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+            overflow: hidden;
+            transition: transform 0.18s ease, border-color 0.18s ease;
+            animation: rise 0.6s both;
+        }
+
+        .group::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent);
+            box-shadow: 0 0 16px var(--accent);
+        }
+
+        .group::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(120% 90% at 0% 50%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%);
+            opacity: 0.7;
+            pointer-events: none;
         }
 
         .group:active {
-            transform: scale(0.985);
-            background: rgba(255, 255, 255, 0.06);
+            transform: scale(0.98);
+            border-color: color-mix(in srgb, var(--accent) 45%, transparent);
         }
 
         .group:focus-visible {
-            outline: 2px solid var(--gold);
+            outline: 2px solid var(--accent);
             outline-offset: 3px;
         }
 
-        .icon {
-            width: 54px;
-            height: 54px;
+        .thumb {
+            position: relative;
+            z-index: 1;
+            width: 56px;
+            height: 56px;
             border-radius: 16px;
             display: grid;
             place-items: center;
-            background: rgba(245, 166, 35, 0.16);
-            background: color-mix(in srgb, var(--accent) 16%, #0c0e14);
+            background:
+                linear-gradient(160deg, color-mix(in srgb, var(--accent) 30%, #10131b), #0c0e14);
+            border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
             color: var(--accent);
         }
 
-        .icon svg {
-            width: 26px;
-            height: 26px;
+        .thumb svg {
+            width: 27px;
+            height: 27px;
             fill: none;
             stroke: currentColor;
             stroke-width: 1.7;
@@ -296,90 +381,141 @@
             stroke-linejoin: round;
         }
 
-        .copy small {
-            display: block;
-            color: var(--accent);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 2px;
+        .info {
+            position: relative;
+            z-index: 1;
+            min-width: 0;
         }
 
-        .copy strong {
+        .info .kicker {
             display: block;
-            font-size: 16px;
+            color: var(--accent);
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .info .name {
+            display: block;
+            font-size: 17px;
             font-weight: 800;
             letter-spacing: -0.02em;
         }
 
-        .copy p {
+        .info .desc {
+            display: block;
             margin-top: 2px;
             color: var(--muted);
             font-size: 12.5px;
-            line-height: 1.35;
+            line-height: 1.3;
         }
 
-        .go {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--ink);
-            font-size: 18px;
-            line-height: 1;
+        .enter {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 12px 8px 14px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--accent) 16%, #0c0e14);
+            border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+            color: var(--accent);
+            font-size: 12.5px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .enter svg {
+            width: 15px;
+            height: 15px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.18s ease;
+        }
+
+        .group:active .enter svg {
+            transform: translateX(3px);
+        }
+
+        /* ---------- FOOTER ---------- */
+        .marquee {
+            margin-top: 26px;
+            text-align: center;
+        }
+
+        .marquee .label {
+            font-size: 10.5px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .stores {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .stores span {
+            font-size: 12px;
+            font-weight: 700;
+            color: #d9d2c6;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
         }
 
         .note {
-            margin-top: 18px;
+            margin-top: 20px;
             text-align: center;
             color: var(--muted);
-            font-size: 12px;
+            font-size: 11.5px;
             line-height: 1.5;
         }
 
-        .note strong {
-            color: #ddd6c8;
-            font-weight: 700;
-        }
+        /* ---------- ANIM ---------- */
+        .g1 { animation-delay: 0.28s; }
+        .g2 { animation-delay: 0.34s; }
+        .g3 { animation-delay: 0.40s; }
+        .g4 { animation-delay: 0.46s; }
 
         @keyframes shine {
-            to {
-                background-position: 180% center;
-            }
+            to { background-position: 200% center; }
         }
 
         @keyframes pulse {
-            70% {
-                box-shadow: 0 0 0 7px rgba(61, 220, 132, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(61, 220, 132, 0);
-            }
+            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         @keyframes drift {
-            to {
-                transform: scale(1.1) translate3d(0, -8px, 0);
-            }
+            to { transform: scale(1.12) translate3d(0, -10px, 0); }
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (prefers-reduced-motion: reduce) {
-
-            .hero-photo,
-            h1 em,
-            .live b {
+            .hero-photo, h1 em, .live b,
+            .eyebrow, h1, .hero-sub, .facts, .group {
                 animation: none;
             }
         }
 
         @media (min-width: 720px) {
-            .app {
-                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-            }
+            .app { box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5); }
         }
     </style>
 </head>
@@ -387,111 +523,116 @@
 <body>
     <main class="app">
         <header class="hero">
-            <img class="hero-photo" src="/banner.jpg" alt="PauLão, o garimpeiro das ofertas">
+            <img class="hero-photo" src="/banner.jpg" alt="PauLão, o especialista dos garimpos">
             <div class="topline">
                 <div class="mark"><i>GP</i> PauLão</div>
                 <div class="live"><b></b> Ao vivo</div>
             </div>
             <p class="eyebrow">Ofertas no WhatsApp</p>
             <h1>Garimpo do <em>PauLão</em></h1>
+            <p class="hero-sub">O especialista em garimpar o menor preço. Achado novo todo dia, direto no seu WhatsApp.</p>
         </header>
 
         <section class="sheet" aria-labelledby="grupos-titulo">
-            <p class="lead">Achados do dia no menor preço. Escolhe o grupo do seu interesse e entra direto no WhatsApp.
-            </p>
-
             <div class="facts">
                 <div class="fact">
-                    <strong>Grátis</strong>
+                    <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                    <strong>100% grátis</strong>
                     <span>para entrar</span>
                 </div>
                 <div class="fact">
+                    <svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v3"/></svg>
                     <strong>Silêncio</strong>
                     <span>sem spam</span>
                 </div>
                 <div class="fact">
+                    <svg viewBox="0 0 24 24"><path d="M13 2L4.5 12.5H11l-1 9.5L19.5 11H13z"/></svg>
                     <strong>Todo dia</strong>
                     <span>achado novo</span>
                 </div>
             </div>
 
             <div class="section-head">
-                <h2 id="grupos-titulo">Grupos disponíveis</h2>
-                <span>4 abertos</span>
+                <h2 id="grupos-titulo">Escolha seu grupo</h2>
+                <span>● 4 abertos</span>
             </div>
 
-            <a class="group" href="/promocoes" style="--accent:#3ddc84">
-                <span class="icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 12l-8 8-8-8V4h8l8 8z" />
-                        <circle cx="9" cy="9" r="1.2" fill="currentColor" stroke="none" />
-                    </svg>
-                </span>
-                <span class="copy">
-                    <small>Grupo #68</small>
-                    <strong>Promoções VIP</strong>
-                    <p>Cupons e achados na Shopee, ML e Amazon</p>
-                </span>
-                <span class="go" aria-hidden="true">›</span>
-            </a>
-
-            <a class="group" href="/carros" style="--accent:#7eb6ff">
-                <span class="icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.2 2.2-2-2 2.2-2.2z" />
-                    </svg>
-                </span>
-                <span class="copy">
-                    <small>Grupo #047</small>
-                    <strong>Carros</strong>
-                    <p>Auto peças multimarcas no menor preço</p>
-                </span>
-                <span class="go" aria-hidden="true">›</span>
-            </a>
-
-            <a class="group" href="/motos" style="--accent:#ff5a52">
-                <span class="icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="6.5" cy="16.5" r="2.5" />
-                        <circle cx="17.5" cy="16.5" r="2.5" />
-                        <path d="M6.5 16.5h6l2-6h3.5" />
-                        <path d="M9 10.5h5.2" />
-                        <path d="M14.5 16.5l-2-6" />
-                    </svg>
-                </span>
-                <span class="copy">
-                    <small>Grupo #087</small>
-                    <strong>Motos</strong>
-                    <p>Capacetes, pneus, transmissão e peças</p>
-                </span>
-                <span class="go" aria-hidden="true">›</span>
-            </a>
-
             <nav class="groups" aria-label="Grupos do Garimpo do PauLão">
-                <a class="group" href="/astra" style="--accent:#f5a623">
-                    <span class="icon" aria-hidden="true">
+                <a class="group g1" href="/promocoes" style="--accent:#34d399">
+                    <span class="thumb" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
-                            <path d="M3 13l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5" />
-                            <path d="M5 16h14" />
-                            <circle cx="7.5" cy="16.5" r="1.5" />
-                            <circle cx="16.5" cy="16.5" r="1.5" />
-                            <path d="M3 13h18" />
+                            <path d="M20.6 11.4l-8-8A2 2 0 0 0 11.2 3H5a2 2 0 0 0-2 2v6.2a2 2 0 0 0 .6 1.4l8 8a2 2 0 0 0 2.8 0l6.2-6.2a2 2 0 0 0 0-2.8z"/>
+                            <circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" stroke="none"/>
                         </svg>
                     </span>
-                    <span class="copy">
-                        <small>Clube Astra</small>
-                        <strong>Peças Astra</strong>
-                        <p>Acessórios, mecânica e acabamento</p>
+                    <span class="info">
+                        <span class="kicker">Promoções VIP · #68</span>
+                        <span class="name">Promoções VIP</span>
+                        <span class="desc">Cupons e achados na Shopee, ML e Amazon</span>
                     </span>
-                    <span class="go" aria-hidden="true">›</span>
+                    <span class="enter">Entrar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+
+                <a class="group g2" href="/carros" style="--accent:#4aa3ff">
+                    <span class="thumb" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 13l1.8-4.6A2 2 0 0 1 6.7 7h10.6a2 2 0 0 1 1.9 1.4L21 13"/>
+                            <path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+                            <circle cx="7" cy="15.5" r="1"/><circle cx="17" cy="15.5" r="1"/>
+                        </svg>
+                    </span>
+                    <span class="info">
+                        <span class="kicker">Auto peças · #047</span>
+                        <span class="name">Carros</span>
+                        <span class="desc">Peças multimarcas no menor preço</span>
+                    </span>
+                    <span class="enter">Entrar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+
+                <a class="group g3" href="/motos" style="--accent:#ff5a52">
+                    <span class="thumb" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="5.5" cy="16.5" r="3"/><circle cx="18.5" cy="16.5" r="3"/>
+                            <path d="M8.5 16.5h5l3-6H20"/><path d="M10 10.5h5"/><path d="M13.5 16.5l-2.5-6"/>
+                        </svg>
+                    </span>
+                    <span class="info">
+                        <span class="kicker">Moto peças · #087</span>
+                        <span class="name">Motos</span>
+                        <span class="desc">Capacetes, pneus, transmissão e peças</span>
+                    </span>
+                    <span class="enter">Entrar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+
+                <a class="group g4" href="/astra" style="--accent:#f5a623">
+                    <span class="thumb" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 13l1.8-4.6A2 2 0 0 1 6.7 7h10.6a2 2 0 0 1 1.9 1.4L21 13"/>
+                            <path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+                            <circle cx="7" cy="15.5" r="1"/><circle cx="17" cy="15.5" r="1"/>
+                            <path d="M9 7l1-2h4l1 2"/>
+                        </svg>
+                    </span>
+                    <span class="info">
+                        <span class="kicker">Clube Astra · Oficial</span>
+                        <span class="name">Peças Astra</span>
+                        <span class="desc">Acessórios, mecânica e acabamento</span>
+                    </span>
+                    <span class="enter">Entrar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
             </nav>
 
-            <p class="note">
-                <strong>Mercado Livre · Shopee · Amazon</strong><br>
-                O link de cada grupo abre a tela dele e segue para o WhatsApp.
-            </p>
+            <div class="marquee">
+                <div class="label">Garimpado em</div>
+                <div class="stores">
+                    <span>Mercado Livre</span>
+                    <span>Shopee</span>
+                    <span>Amazon</span>
+                    <span>Magalu</span>
+                </div>
+            </div>
+
+            <p class="note">Toque no grupo do seu interesse e entre direto no WhatsApp.</p>
         </section>
     </main>
 </body>
