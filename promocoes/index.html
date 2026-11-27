@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#07080c">
-    <meta name="description" content="Grupo Promoções VIP do Garimpo do PauLão. Eletrônicos, utilidades, ferramentas e achados com cupons de até 90% na Shopee, ML e Amazon.">
-    <title>Garimpo do PauLão | Promoções VIP #68</title>
+    <meta name="description"
+        content="Grupo Promoções VIPs. Eletrônicos, utilidades, ferramentas e achados com cupons de até 90% na Shopee, ML e Amazon.">
+    <title>Garimpo das Promoções VIP #68</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --accent: #34d399;
@@ -27,8 +30,16 @@
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-        html { background: #05060a; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            background: #05060a;
+        }
 
         body {
             min-height: 100dvh;
@@ -44,7 +55,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .stage { position: relative; width: 100%; max-width: 430px; animation: rise 0.6s both; }
+        .stage {
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            animation: rise 0.6s both;
+        }
 
         .stage::before {
             content: "";
@@ -77,56 +93,287 @@
             pointer-events: none;
         }
 
-        .media { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #0d1117; }
-        .media img { width: 100%; height: 100%; object-fit: cover; object-position: var(--img-pos); transform: scale(1.02); }
-        .media .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 8, 12, 0.15) 0%, transparent 30%, transparent 55%, var(--bg-2) 100%); }
+        .media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background: #0d1117;
+        }
+
+        .media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: var(--img-pos);
+            transform: scale(1.02);
+        }
+
+        .media .fade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7, 8, 12, 0.15) 0%, transparent 30%, transparent 55%, var(--bg-2) 100%);
+        }
 
         .chip {
-            position: absolute; top: 14px; left: 14px;
-            display: inline-flex; align-items: center; gap: 7px;
-            padding: 6px 12px; border-radius: 999px;
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 12px;
+            border-radius: 999px;
             background: rgba(7, 8, 12, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.16);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #fff;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #fff;
         }
-        .chip b { width: 7px; height: 7px; border-radius: 50%; background: var(--wpp); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); animation: pulse 1.8s infinite; }
 
-        .body { position: relative; padding: 4px 22px 24px; text-align: center; }
+        .chip b {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--wpp);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            animation: pulse 1.8s infinite;
+        }
 
-        .brand { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-        .brand i { width: 26px; height: 26px; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(150deg, var(--brand-soft), var(--brand) 55%, #c47a09); color: #1a1206; font-style: normal; font-size: 10px; font-weight: 800; }
+        .body {
+            position: relative;
+            padding: 4px 22px 24px;
+            text-align: center;
+        }
 
-        h1 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(30px, 8.5vw, 38px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
 
-        .tag { display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 14%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 0.04em; margin-bottom: 14px; }
+        .brand i {
+            width: 26px;
+            height: 26px;
+            border-radius: 9px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(150deg, var(--brand-soft), var(--brand) 55%, #c47a09);
+            color: #1a1206;
+            font-style: normal;
+            font-size: 10px;
+            font-weight: 800;
+        }
 
-        .desc { color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 34ch; margin: 0 auto 20px; }
+        h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(30px, 8.5vw, 38px);
+            line-height: 1;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
 
-        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-        .stat { background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)); border: 1px solid var(--line); border-radius: 16px; padding: 13px 10px; }
-        .stat .v { font-size: 15px; font-weight: 800; color: var(--accent); }
-        .stat .l { margin-top: 3px; font-size: 11px; color: var(--muted); }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--accent) 14%, transparent);
+            border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            margin-bottom: 14px;
+        }
 
-        .timer { background: rgba(255, 255, 255, 0.025); border: 1px solid var(--line); border-radius: 16px; padding: 13px 15px; margin-bottom: 16px; text-align: left; }
-        .timer-top { display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; color: var(--muted); margin-bottom: 9px; }
-        .timer-top b { background: var(--accent); color: #05060a; font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 7px; }
-        .track { height: 7px; background: rgba(255, 255, 255, 0.08); border-radius: 10px; overflow: hidden; }
-        .fill { height: 100%; width: 0%; border-radius: 10px; background: linear-gradient(90deg, var(--accent), var(--accent-soft)); box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 60%, transparent); transition: width 0.05s linear; }
+        .desc {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 34ch;
+            margin: 0 auto 20px;
+        }
 
-        .cta { display: flex; align-items: center; justify-content: center; gap: 11px; width: 100%; background: linear-gradient(180deg, #2ee06f, var(--wpp)); color: #04220f; text-decoration: none; font-weight: 800; font-size: 16px; letter-spacing: -0.01em; padding: 17px; border-radius: 16px; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4); animation: pulseBtn 2.2s infinite; }
-        .cta svg { width: 22px; height: 22px; fill: currentColor; }
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
-        .back { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; color: var(--muted); font-size: 13px; font-weight: 700; text-decoration: none; }
-        .back svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+        .stat {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 13px 10px;
+        }
 
-        .trust { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+        .stat .v {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--accent);
+        }
 
-        @keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        @keyframes pulseBtn { 0% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 16px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); } }
-        @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .stat .l {
+            margin-top: 3px;
+            font-size: 11px;
+            color: var(--muted);
+        }
 
-        @media (prefers-reduced-motion: reduce) { .stage, .cta, .chip b { animation: none; } }
+        .timer {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 13px 15px;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .timer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12.5px;
+            color: var(--muted);
+            margin-bottom: 9px;
+        }
+
+        .timer-top b {
+            background: var(--accent);
+            color: #05060a;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 3px 9px;
+            border-radius: 7px;
+        }
+
+        .track {
+            height: 7px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 60%, transparent);
+            transition: width 0.05s linear;
+        }
+
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
+            width: 100%;
+            background: linear-gradient(180deg, #2ee06f, var(--wpp));
+            color: #04220f;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+            padding: 17px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            animation: pulseBtn 2.2s infinite;
+        }
+
+        .cta svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .back svg {
+            width: 15px;
+            height: 15px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .trust {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            70% {
+                box-shadow: 0 0 0 8px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes pulseBtn {
+            0% {
+                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 16px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .stage,
+            .cta,
+            .chip b {
+                animation: none;
+            }
+        }
     </style>
 </head>
 
@@ -139,28 +386,42 @@
                 <span class="chip"><b></b> Grupo aberto</span>
             </div>
             <div class="body">
-                <div class="brand"><i>GP</i> Garimpo do PauLão</div>
+                <div class="brand"><i>GP</i> Garimpo das Promoções Vips</div>
                 <h1>Promoções VIP</h1>
                 <div class="tag">Promoções VIP · #68</div>
-                <p class="desc">Você escolheu o grupo de eletrônicos, utilidades domésticas, ferramentas e achados com cupons de até 90% na Shopee, Mercado Livre e Amazon.</p>
+                <p class="desc">Você escolheu o grupo de eletrônicos, utilidades domésticas, ferramentas e achados com
+                    cupons de até 90% na Shopee, Mercado Livre e Amazon.</p>
 
                 <div class="stats">
-                    <div class="stat"><div class="v">Até 90% OFF</div><div class="l">Cupons e bugs</div></div>
-                    <div class="stat"><div class="v">100% silencioso</div><div class="l">Sem conversas ou spam</div></div>
+                    <div class="stat">
+                        <div class="v">Até 90% OFF</div>
+                        <div class="l">Cupons e bugs</div>
+                    </div>
+                    <div class="stat">
+                        <div class="v">100% silencioso</div>
+                        <div class="l">Sem conversas ou spam</div>
+                    </div>
                 </div>
 
                 <div class="timer">
                     <div class="timer-top"><span>Entrando no grupo em…</span><b id="timeText">4s</b></div>
-                    <div class="track"><div class="fill" id="barFill"></div></div>
+                    <div class="track">
+                        <div class="fill" id="barFill"></div>
+                    </div>
                 </div>
 
                 <a href="https://chat.whatsapp.com/Li8t7WCmdqiEYjhppd3wA7" class="cta">
-                    <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.956 2.796.957 3.183 0 5.768-2.587 5.768-5.767 0-3.181-2.586-5.768-5.768-5.768zm7.397 5.766c.002 4.078-3.32 7.398-7.397 7.399-.001 0-.001 0 0 0-1.282 0-2.53-.33-3.623-.956l-4.032 1.058 1.077-3.931c-.684-1.135-1.047-2.434-1.048-3.766.002-4.078 3.32-7.399 7.397-7.399 4.078 0 7.398 3.321 7.398 7.399z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.956 2.796.957 3.183 0 5.768-2.587 5.768-5.767 0-3.181-2.586-5.768-5.768-5.768zm7.397 5.766c.002 4.078-3.32 7.398-7.397 7.399-.001 0-.001 0 0 0-1.282 0-2.53-.33-3.623-.956l-4.032 1.058 1.077-3.931c-.684-1.135-1.047-2.434-1.048-3.766.002-4.078 3.32-7.399 7.397-7.399 4.078 0 7.398 3.321 7.398 7.399z" />
+                    </svg>
                     Entrar no grupo VIP
                 </a>
 
                 <a href="/" class="back" id="homeLink">
-                    <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 12H5M11 18l-6-6 6-6" />
+                    </svg>
                     Ver todos os grupos
                 </a>
 
